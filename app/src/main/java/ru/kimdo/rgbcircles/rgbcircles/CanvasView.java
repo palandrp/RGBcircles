@@ -27,7 +27,7 @@ public class CanvasView extends View {
     }
 
     private void initMainCircle() {
-        mainCircle = new MainCircle(200, 500)
+        mainCircle = new MainCircle(200, 500);
     }
 
     @Override
