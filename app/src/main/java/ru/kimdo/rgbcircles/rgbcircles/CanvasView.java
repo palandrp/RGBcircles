@@ -10,28 +10,16 @@ import android.view.View;
  * Created by kimdo on 20.04.17.
  */
 public class CanvasView extends View {
-    private MainCircle mainCircle;
-    private Paint paint;
+    private GameManager gameManager;
 
     public CanvasView(Context context, AttributeSet attrs) {
         super(context, attrs);
-        initMainCircle();
-        initPaint();
-        
-    }
-
-    private void initPaint() {
-        paint = new Paint();
-        paint.setAntiAlias(true);
-        paint.setStyle(Paint.Style.FILL);
-    }
-
-    private void initMainCircle() {
-        mainCircle = new MainCircle(200, 500);
+        gameManager = new GameManager();
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        gameManager.onDraw(canvas);
     }
 }
