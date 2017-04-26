@@ -17,7 +17,7 @@ public class EnemyCircle extends SimpleCircle {
     private int dx;
     private int dy;
 
-    public EnemyCircle(int x1, int i, int x, int y, int radius) {
+    public EnemyCircle(int x, int y, int radius, int dx, int dy) {
 
         super(x, y, radius);
         this.dx = dx;
