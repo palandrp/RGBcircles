@@ -9,6 +9,7 @@ import android.view.Display;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Toast;
 
 /**
  * Created by kimdo on 20.04.17.
@@ -19,6 +20,7 @@ public class CanvasView extends View implements ICanvasView {
     private Paint paint;
     private GameManager gameManager;
     private Canvas canvas;
+    private Toast toast;
 
     public CanvasView(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -58,6 +60,15 @@ public class CanvasView extends View implements ICanvasView {
     @Override
     public void redraw() {
         invalidate();
+    }
+
+    @Override
+    public void showMessage(String text) {
+        if (toast != null){
+            toast.cancel();
+        }
+        toast.makeText(getContext(), text, Toast.LENGTH_SHORT);
+        toast.show();
     }
 
     @Override
